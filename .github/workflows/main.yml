@@ -36,4 +36,3 @@ jobs:
         runtime: 'nodejs16'
         env_vars: 'BEARER_TOKEN=${{secrets.BEARER_TOKEN}}'
         entry_point: 'main'
-        source_dir: 'src'
