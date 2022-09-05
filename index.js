@@ -1,7 +1,5 @@
 import { Client } from "twitter-api-sdk";
-import dotenv from "dotenv";
 
-dotenv.config();
 const { BEARER_TOKEN } = process.env;
 
 export function main(req, res) {
