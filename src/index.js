@@ -18,7 +18,7 @@ async function main() {
   const rules = await client.tweets.getRules();
   console.log(rules);
   const stream = client.tweets.searchStream({
-    "tweet.fields": ["created_at", "public_metrics"],
+    "tweet.fields": ["created_at", "public_metrics", "author_id"],
   });
   for await (const tweet of stream) {
     console.log(tweet);
