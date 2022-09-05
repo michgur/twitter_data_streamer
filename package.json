@@ -1,0 +1,22 @@
+{
+  "name": "twitter_data_streamer",
+  "version": "1.0.0",
+  "description": "collect twitter data into BQ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michgur/twitter_data_streamer.git"
+  },
+  "author": "Michael Gur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michgur/twitter_data_streamer/issues"
+  },
+  "homepage": "https://github.com/michgur/twitter_data_streamer#readme",
+  "dependencies": {
+    "twitter-api-sdk": "^1.1.0"
+  }
+}
