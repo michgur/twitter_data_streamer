@@ -1,4 +1,5 @@
 import { Client } from "twitter-api-sdk";
+import { BigQuery } from "@google-cloud/bigquery";
 
 const { BEARER_TOKEN } = process.env;
 
