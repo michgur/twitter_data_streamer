@@ -1,4 +1,4 @@
-const { Client } from "twitter-api-sdk";
+import { Client } from "twitter-api-sdk";
 import dotenv from "dotenv";
 
 dotenv.config();
