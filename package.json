@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./src/index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,5 @@
   "dependencies": {
     "dotenv": "^16.0.2",
     "twitter-api-sdk": "^1.1.0"
-  },
-  "engines": {
-    "node": "16"
   }
 }
