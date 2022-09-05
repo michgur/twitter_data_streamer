@@ -22,13 +22,12 @@ export async function main(req, res) {
         "tweet.fields": ["created_at", "public_metrics", "author_id"],
       })
     } catch (e) {
-      res.status(500).send(`failed to create tweet stream ${e.toString()}`);
+      res.status(500).send(`failed to create tweet stream ${e.stcak}`);
       return;
     }
 
     try {
       for await (const tweets of stream) {
-        console.log(tweets);
         await bigquery
           .dataset('tilde_data')
           .table('tweets')
@@ -38,7 +37,7 @@ export async function main(req, res) {
           })))
       }
     } catch (e) {
-      res.status(500).send(`an error occured while processing tweets ${e.toString()}`);
+      res.status(500).send(`an error occured while processing tweets ${e.stack}`);
       return;
     }
     res.status(200).send(`successfuly added tweets`);
