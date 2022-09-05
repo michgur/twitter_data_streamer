@@ -29,5 +29,3 @@ export async function main(req, res) {
     }
   res.status(200).send(`Successfuly Added Tweets`);
 }
-
-main();
