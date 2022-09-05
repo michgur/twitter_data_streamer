@@ -27,10 +27,11 @@ jobs:
     - id: auth
       uses: google-github-actions/auth@v0
       with:
-        service_account: 'tilde-359707@appspot.gserviceaccount.com'
+        credentials_json: '${{secrets.GCP_CREDENTIALS}}'
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-cloud-functions@v0'
       with:
         name: 'twitter-data-dump'
         runtime: 'nodejs16'
+        env_vars: 'BEARER_TOKEN=${{secrets.BEARER_TOKEN}}'
