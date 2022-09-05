@@ -34,5 +34,5 @@ jobs:
       with:
         name: 'twitter-data-dump'
         runtime: 'nodejs16'
-        env_vars: 'BEARER_TOKEN=${{secrets.BEARER_TOKEN}}'
+        env_vars: 'BEARER_TOKEN=${{secrets.BEARER_TOKEN}},BQ_CREDENTIALS=${{secrets.GCP_CREDENTIALS}}'
         entry_point: 'main'
