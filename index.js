@@ -36,7 +36,7 @@ export async function main(req, res) {
         console.log(JSON.stringify(bqRes, null, 4))
       }
     } catch (e) {
-      res.status(500).send(`an error occured while processing tweets ${e.stack}`);
+      res.status(500).send(`an error occured while processing tweets ${e.statusText} ${e.stack}`);
       return;
     }
     res.status(200).send(`successfuly added tweets`);
