@@ -9,7 +9,6 @@ const bigquery = new BigQuery(options);
 const twitter = new Client(BEARER_TOKEN);
 
 export async function main(req, res) {
-  res.status(200).send(BEARER_TOKEN)
   if (!("query" in req)) {
     res.status(422).send("missing query");
   } else {
@@ -37,7 +36,7 @@ export async function main(req, res) {
         console.log(JSON.stringify(bqRes, null, 4))
       }
     } catch (e) {
-      res.status(500).send(`an error occured while processing tweets ${e.statusText} ${e.stack}`);
+      res.status(500).send(`an error occured while processing tweets ${JSON.stringify(e, null, 4)} ${e.stack}`);
       return;
     }
     res.status(200).send(`successfuly added tweets`);
