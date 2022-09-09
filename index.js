@@ -9,16 +9,13 @@ const bigquery = new BigQuery(options);
 const twitter = new Client(BEARER_TOKEN);
 
 export async function main(req, res) {
-  console.log(req);
-  res.status(200).send("yay");
-  return;
-  if (!("query" in req)) {
+  if (!("query" in req.body)) {
     res.status(422).send("missing query");
   } else {
     let stream = undefined;
     try {
       stream = twitter.tweets.tweetsRecentSearch({
-        query: `${req.query} lang:en -is:retweet -is:reply -is:quote is:verified`,
+        query: `${req.body.query} lang:en -is:retweet -is:reply -is:quote is:verified`,
         "tweet.fields": ["created_at", "public_metrics", "author_id"],
       })
     } catch (e) {
