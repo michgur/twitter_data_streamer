@@ -29,8 +29,8 @@ export async function main(req, res) {
         const bqRes = await bigquery
           .dataset('tilde_data')
           .table('tweets')
-          .insert(tweets['data'].map(({ created_at, ...data }) => ({
-            ...data,
+          .insert(tweets['data'].map(({ id, created_at, public_metrics, author_id, text }) => ({
+            id, public_metrics, author_id, text,
             created_at: created_at ? created_at.slice(0, -1) : undefined
           })))
         console.log(JSON.stringify(bqRes, null, 4))
