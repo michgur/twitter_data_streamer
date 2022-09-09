@@ -19,6 +19,7 @@
   "homepage": "https://github.com/michgur/twitter_data_streamer#readme",
   "dependencies": {
     "@google-cloud/bigquery": "^6.0.2",
+    "axios": "^0.27.2",
     "twitter-api-sdk": "^1.1.0"
   },
   "devDependencies": {
