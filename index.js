@@ -9,6 +9,9 @@ const bigquery = new BigQuery(options);
 const twitter = new Client(BEARER_TOKEN);
 
 export async function main(req, res) {
+  console.log(JSON.stringify(req, null, 4));
+  res.status(200).send("yay");
+  return;
   if (!("query" in req)) {
     res.status(422).send("missing query");
   } else {
