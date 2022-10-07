@@ -31,7 +31,8 @@ export async function main(req, res) {
           .table('tweets')
           .insert(tweets['data'].map(({ id, created_at, public_metrics, author_id, text }) => ({
             id, public_metrics, author_id, text,
-            created_at: created_at ? created_at.slice(0, -1) : undefined
+            created_at: created_at ? created_at.slice(0, -1) : undefined,
+            query: req.body.query,
           })))
         console.log(JSON.stringify(bqRes, null, 4))
       }
